@@ -11,8 +11,8 @@ def send_birthday_emails(today_birthdays):
     # Email configuration
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587  # Gmail SMTP port
-    sender_email = 'sunknowledge30@gmail.com'  # Your Gmail email address
-    sender_password = 'crqd elmb vqrq lppw'  # Your Gmail password
+    sender_email = 'your@gmail.com'  # Your Gmail email address
+    sender_password = '*** **** ***** *****'  # Your Gmail password
     
     # Login to Gmail SMTP server
     server = smtplib.SMTP(smtp_server, smtp_port)
@@ -23,7 +23,7 @@ def send_birthday_emails(today_birthdays):
     for index, row in today_birthdays.iterrows():
         recipient_email = row['Email']
         subject = 'Happy Birthday!'
-        message = f"Dear {row['Employee Name']},\n\nWishing you a very happy birthday!\n\nBest regards,\nSunknowledge IT-Dev"
+        message = f"Dear {row['Employee Name']},\n\nWishing you a very happy birthday!\n\nBest regards,\nPowerCloud"
         
         msg = MIMEMultipart()
         msg['From'] = sender_email
