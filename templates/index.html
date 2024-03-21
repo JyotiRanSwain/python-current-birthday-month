@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday List</title>
+</head>
+<body>
+    <center>
+        <h1>
+             Sunknowledge IT-Dev
+        </h1>
+    </center>
+    <h1>Current Month's Birthday List</h1>
+    <button id="getBirthdays">Get Birthdays</button>
+    <div id="birthdayList"></div>
+
+    <script>
+        document.getElementById('getBirthdays').addEventListener('click', function() {
+            fetch('/get_birthdays')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('birthdayList').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
