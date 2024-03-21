@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday List</title>
+</head>
+<body>
+    <h1>Current Month's Birthday List</h1>
+
+    <h2>Past Birthdays</h2>
+    <ul>
+        {% for _, row in past_birthdays.iterrows() %}
+            <li>{{ row['Employee Name'] }} - {{ row['Birthday'].strftime('%B %d') }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Today's Birthdays</h2>
+    <ul>
+        {% for _, row in today_birthdays.iterrows() %}
+            <li>{{ row['Employee Name'] }} - {{ row['Birthday'].strftime('%B %d') }}</li>
+        {% endfor %}
+        {% if birthday_messages %}
+            {% for message in birthday_messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+    <h2>Upcoming Birthdays</h2>
+    <ul>
+        {% for _, row in upcoming_birthdays.iterrows() %}
+            <li>{{ row['Employee Name'] }} - {{ row['Birthday'].strftime('%B %d') }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
