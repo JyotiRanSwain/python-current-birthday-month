@@ -8,5 +8,5 @@ docker build -t flask-app .
 
 Create docker container:
 ```
-docker run -d --name Birthday -p 5000:5000 -v .\employees.xlsx:/app/employees.xlsx flask-app
+docker run -d --name Birthday -p 5000:5000 -v ./employees.xlsx:/app/employees.xlsx flask-app
 ```
